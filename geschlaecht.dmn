@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_8E3E1C4B-69CA-4615-9C71-32BAF79A44FF" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_902EB54A-6DC5-4E69-8477-C8F311822A2B" name="Untitled" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_8E3E1C4B-69CA-4615-9C71-32BAF79A44FF">
+  <dmn:extensionElements/>
+  <dmn:inputData id="_3D6723A0-8D8B-4C63-B38B-B48DA0ED915D" name="Geschlecht">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6C37CE83-F6EF-4F77-A669-D2F9F457B62E" name="Geschlecht" typeRef="string"/>
+  </dmn:inputData>
+  <dmn:decision id="_2BA816ED-AFE6-4835-9BA5-D2FCCFB2CAFD" name="Geschlechtsergebnis">
+    <dmn:extensionElements/>
+    <dmn:variable id="_94E85F04-B66D-4005-8826-FB7D63F3E5BA" name="Geschlechtsergebnis" typeRef="boolean"/>
+    <dmn:informationRequirement id="_61D58F33-1ED1-4F50-A262-FE26594BB25E">
+      <dmn:requiredInput href="#_3D6723A0-8D8B-4C63-B38B-B48DA0ED915D"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_95B57541-F86B-4C01-B436-ABF8ABE35319" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_91CEAAB6-54E8-4CCA-87FF-085B0AF93372">
+        <dmn:inputExpression id="_F6035724-D8F9-4A31-97AA-DE3768C105E9" typeRef="string">
+          <dmn:text>Geschlecht</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_5B3CC6EE-623A-444B-9BE3-0EF727FD9E8A"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_FBE85DC3-EA82-4133-BCE9-9C8427CF7C82">
+        <dmn:inputEntry id="_8DFB4B29-B6D4-495C-A902-4008C00ACE02">
+          <dmn:text>"maennlich"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_BA3CC286-93C8-4BA8-B521-88C71797C2C7">
+          <dmn:text>true</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_BFC72F05-9695-4E62-A511-9465522526DE">
+        <dmn:inputEntry id="_EBC54698-23D7-4CA1-8584-6F688E691173">
+          <dmn:text>"weiblich"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_019F891C-33E1-4E98-AFB5-FBA91840AB4D">
+          <dmn:text>false</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_AB109BF7-5349-462E-8782-543756965AA7" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_95B57541-F86B-4C01-B436-ABF8ABE35319">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_3D6723A0-8D8B-4C63-B38B-B48DA0ED915D" dmnElementRef="_3D6723A0-8D8B-4C63-B38B-B48DA0ED915D" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="558" y="358" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_2BA816ED-AFE6-4835-9BA5-D2FCCFB2CAFD" dmnElementRef="_2BA816ED-AFE6-4835-9BA5-D2FCCFB2CAFD" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="558" y="228" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_61D58F33-1ED1-4F50-A262-FE26594BB25E-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_61D58F33-1ED1-4F50-A262-FE26594BB25E">
+        <di:waypoint x="608" y="358"/>
+        <di:waypoint x="608" y="278"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
